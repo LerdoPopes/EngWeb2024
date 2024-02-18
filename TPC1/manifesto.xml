@@ -14,7 +14,7 @@
     </meta>
     <resumo>
         <p>Este trabalho tem como objetivo gerar um script que permita criar uma página HTML com uma lista das cidades de Braga, ordenadas alfabeticamente. Quando um utilizador clicar numa das cidades, deve ser aberta uma nova página que contém as informações dessa rua (descrição, fotos, casas...).</p>
-        <p>Terceiro Paragrafos com <url>https://github.com/ema-12-martins/EngWeb2024/tree/main/TPC1</url><texto>Repositório</texto></p>
+        <p>Terceiro Paragrafos com <url>https://github.com/LerdoPopes/EngWeb2024/tree/main/TPC1</url><texto>Repositório</texto></p>
     </resumo>
     <resultados>
         <resultado> Através do script.py é gerada a página principal pedida bem como todas as páginas secundárias.</resultado>
