@@ -33,10 +33,11 @@ http.createServer((req,res) => {
 
     if(q.pathname == "/"){
         //Lista cidades
-        axios.get("http://localhost:17001/cidades").then(
-            (resp) => {
+        axios.get("http://localhost:17001/cidades?_sort=nome").then(
+        (resp) => {
                 let lista = resp.data
 
+                res.write("<h1 style='text-align:center;background-color:Grey'>Cidades</h1>");
                 res.write("<ul>")
                 for(elem in lista){
                     res.write("<li><a href='/cidades/" + lista[elem].nome + ">" + lista[elem].nome + "</a></li>")
@@ -45,12 +46,48 @@ http.createServer((req,res) => {
                 res.end();
             }
         ).catch( erro =>{
-            console.log("Erro: " + erro)
+            console.log("Erro: " + erro);
+            res.write("<p>Erro ao obter as cidades: " + erro + "</p>");
+            res.end(); 
         }
         )
     }
-    else{
-        res.write("Não é permitido")
-    } 
+    else if (req.url.startsWith("/cidades/")){
+        console.log(req.url);
+        var codigoCidade = req.url.split("/")[2];
+        console.log(codigoCidade);
+        
+        axios.get("http://localhost:17001/cidades/" + codigoCidade)
+            .then((resp) => {
+                var cidade = resp.data;
+    
+                var cabecalho = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Cidades</title>
+                        <meta charset="UTF-8">
+                    </head>
+                    <body>
+                `;
+
+                res.write(cabecalho);
+                res.write("<h1 style='text-align:center;background-color:Grey'>" + cidade.nome + "</h1>");
+                res.write("<p><b>Código da Cidade: </b>"+cidade.id+"</p>")
+                res.write("<p><b>População: </b>"+cidade.população+"</p>")
+                res.write("<p><b>Destrito: </b>"+cidade.distrito+"</p>")
+                res.write("<p><b>Descrição: </b>"+cidade.descrição+"</p>")
+                res.write("<h3 style='text-align:center'><a href='/cidades'>Voltar</a></h3>");
+
+                res.write("</body>");
+                res.write("</html>");
+                res.end();
+            })
+            .catch((erro) => {
+                console.log("Erro: " + erro);
+                res.write("<p>Erro ao obter informações da cidade: " + erro + "</p>");
+                res.end(); 
+            });
+        }
 
 }).listen(1902);
