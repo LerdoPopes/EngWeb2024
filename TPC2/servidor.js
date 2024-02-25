@@ -31,16 +31,16 @@ http.createServer((req,res) => {
 
     res.writeHead(200, {'Content-Type' : 'text/html; charset=utf-8'})
 
-    if(q.pathname == "/"){
+    if (req.url == "/cidades") {
         //Lista cidades
         axios.get("http://localhost:17001/cidades?_sort=nome").then(
         (resp) => {
                 let lista = resp.data
 
-                res.write("<h1 style='text-align:center;background-color:Grey'>Cidades</h1>");
+                res.write("<h1 style='text-align:center;background-color:Blue'>Cidades</h1>");
                 res.write("<ul>")
                 for(elem in lista){
-                    res.write("<li><a href='/cidades/" + lista[elem].nome + ">" + lista[elem].nome + "</a></li>")
+                    res.write("<li><a href='/cidades/" + lista[elem].id + "'>" + lista[elem].nome + "</a></li>")
                 }
                 res.write("</ul>")
                 res.end();
@@ -53,9 +53,9 @@ http.createServer((req,res) => {
         )
     }
     else if (req.url.startsWith("/cidades/")){
-        console.log(req.url);
+        
+        //Tratamento de cada cidade
         var codigoCidade = req.url.split("/")[2];
-        console.log(codigoCidade);
         
         axios.get("http://localhost:17001/cidades/" + codigoCidade)
             .then((resp) => {
@@ -72,7 +72,7 @@ http.createServer((req,res) => {
                 `;
 
                 res.write(cabecalho);
-                res.write("<h1 style='text-align:center;background-color:Grey'>" + cidade.nome + "</h1>");
+                res.write("<h1 style='text-align:center;background-color:Blue'>" + cidade.nome + "</h1>");
                 res.write("<p><b>Código da Cidade: </b>"+cidade.id+"</p>")
                 res.write("<p><b>População: </b>"+cidade.população+"</p>")
                 res.write("<p><b>Destrito: </b>"+cidade.distrito+"</p>")

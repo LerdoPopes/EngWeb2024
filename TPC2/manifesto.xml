@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <title>TPC2: Páginas de cidades com Servidor JSON</title>
+        <date>2023-02-25</date>
+        <author>
+            <id>A100759</id>
+            <nome>Pedro Lopes</nome>
+        </author>
+        <uc>
+            <sigla>EW2024</sigla>
+            <nome>Engenharia Web </nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>Este trabalho de casa tem como objetivo criar um servidor em JS que crie uma página HTML com a lista das cidades ordenada alfabeticamente e,
+         também, páginas HTML com as informações das cidades respetivas contidas num ficheiro JSON. Quando um utilizador clicar numa das cidades, 
+         deve ser aberta a sua página, que contém as informações dessa rua (descrição, fotos, casas...) e contém também o seu id como referência da página.</p>
+        <p>Terceiro Parágrafo com <url>https://github.com/LerdoPopes/EngWeb2024/tree/main/TPC2</url><texto>Repositório</texto></p>
+    </resumo>
+    <resultados>
+        <resultado> Com um servidor funcional e um ficheiro mapa em JSON, é possível obter as páginas das cidades pretendidas.</resultado>
+    </resultados> 
+</doc>
