@@ -1,31 +1,8 @@
 var http = require('http');
-var meta = require('./auxiliar');
 var url = require('url')
 var axios = require('axios')
-const { myDateTime } = require('./auxiliar');
-
-/*
-http.createServer((req,res) => {
-    console.log(req.method + " " + req.url);
-
-
-    res.writeHead(200, {'Content-Type' : 'text/html; charset=utf-8'})
-
-    var q = url.parse(req.url,true)
-    res.write('True: <pre>'
-        + JSON.stringify(q)
-        + "</pre>")
-
-    var q2 = url.parse(req.url,false)
-    res.write('False: <pre>'
-    + JSON.stringify(q2)
-    + "</pre>")
-    res.end()
-}).listen(1902);
-*/
 
 http.createServer((req,res) => {
-    console.log(req.method + " " + req.url + " " + meta.myDateTime());
 
     var q = url.parse(req.url,true)
 
