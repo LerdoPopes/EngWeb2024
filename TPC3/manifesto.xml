@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <title>TPC3: Correção de Ficheiro JSON e Páginas de Filmes com Servidor JSON</title>
+        <date>2023-03-03</date>
+        <author>
+            <id>A100759</id>
+            <nome>Pedro Lopes</nome>
+        </author>
+        <uc>
+            <sigla>EW2024</sigla>
+            <nome>Engenharia Web </nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>Este trabalho de casa tem como objetivo corrigir um ficheiro JSON, de forma a criar um servidor em JS que crie uma página HTML com a lista dos filmes ordenada alfabeticamente e,
+         também, páginas HTML com as informações dos filmes respetivos contidos num ficheiro JSON. Isto deve ser feito também com os géneros e atores dos filmes. Por exemplo, quando um utilizador 
+         clicar num dos filmes, deve ser aberta a sua página, que contém as informações desse filme e contém também o seu id como referência da página.
+         Para o acesso das páginas, basta procurar por films, genres ou cast.</p>
+        <p>Terceiro Parágrafo com <url>https://github.com/LerdoPopes/EngWeb2024/tree/main/TPC3</url><texto>Repositório</texto></p>
+    </resumo>
+    <resultados>
+        <resultado> Com um servidor funcional e um ficheiro mapa em JSON, é possível obter as páginas dos filmes pretendidas.</resultado>
+    </resultados> 
+</doc>
