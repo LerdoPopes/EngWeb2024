@@ -1,2 +1,2 @@
-# TPC2
+# TPC3
 Este TPC tem como objetivo corrigir o ficheiro JSON e estruturá-lo, de forma a criar um servidor em JS que crie uma página HTML com a lista dos filmes ordenada alfabeticamente e, também, páginas HTML com as informações dos filmes respetivos contidos num ficheiro JSON. O servidor deve permitir isto também para os géneros e atores dos filmes. 
