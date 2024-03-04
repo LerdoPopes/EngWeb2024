@@ -1,2 +1,3 @@
 # TPC3
 Este TPC tem como objetivo corrigir o ficheiro JSON e estruturá-lo, de forma a criar um servidor em JS que crie uma página HTML com a lista dos filmes ordenada alfabeticamente e, também, páginas HTML com as informações dos filmes respetivos contidos num ficheiro JSON. O servidor deve permitir isto também para os géneros e atores dos filmes. 
+Para a correção do ficheiro JSON, são utilizados o fixer.py para formatar o ficheiro corretamente, adicionando-lhe as vírgulas de separação entre elementos e a formatação correta e também o jsonEditor.py para criar os arrays de cast e genres no ficheiro JSON, para ser mais fácil a criação das respetivas páginas.
