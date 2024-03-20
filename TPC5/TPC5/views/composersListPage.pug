@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    .w3-card-4
+        header.w3-container.w3-teal
+            h1
+                span #{title}
+                |
+                a.w3-btn.w3-round.w3-grey(href="/compositores/registo") +
+        .w3-container
+            table.w3-table-all
+                tr
+                    th id
+                    th nome
+                    th bio
+                    th Actions
+                    th dataNasc
+                    th dataObito
+                    th periodo
+                each item in lista
+                    tr
+                        td= item.id
+                        td
+                            a(href=`/compositores/${item.id}`)= item.nome
+                        td= item.bio
+                        td= item.dataNasc
+                        td= item.dataObito
+                        td= item.periodo
+                        td
+                            span [
+                                a(href=`/compositores/edit/${item.id}`) Edit
+                            span ]
+                            span [
+                                a(href=`/compositores/delete/${item.id}`) Delete
+                            span ]
+        footer.w3-container.w3-blue
+            h5 Gerado por EngWeb2024 in #{data} - 
+            a(href="/") Return

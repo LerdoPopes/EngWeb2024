@@ -25,17 +25,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/registo', function(req, res, next) {
     var d = new Date().toISOString().substring(0, 16)
-    res.status(200).render('registerPeriodoPage', {title: 'Register Periodo', data: d})
-});
-
-router.post('/registo', function(req, res, next) {
-    axios.post("http://localhost:17001/periodos", req.body)
-        .then(resp => {
-            res.status(200).redirect('/periodos')
-        })
-        .catch(erro => {
-            res.status(501).render('error', {error: 'Error fetching periodos'})
-        })
+    res.status(200).render('periodoRegisterPage', {title: 'Register Periodo', data: d})
 });
 
 router.get('/:id', function(req, res, next) {
@@ -59,10 +49,20 @@ router.get('/edit/:id', function(req, res, next) {
     var d = new Date().toISOString().substring(0, 16)
     axios.get("http://localhost:17001/periodos/" + req.params.id)
         .then(resp => {
-            res.status(200).render('editPeriodoPage', {periodo: resp.data, data: d, title: 'Edit Periodo'})
+            res.status(200).render('periodoEditPage', {periodo: resp.data, data: d, title: 'Edit Periodo'})
         })
         .catch(erro => {
             res.status(501).render('error', {error: 'Error fetching periodo'})
+        })
+});
+
+router.get('/delete/:id', function(req, res, next) {
+    axios.delete("http://localhost:17001/periodos/" + req.params.id)
+        .then(resp => {
+            res.status(200).redirect('/periodos')
+        })
+        .catch(erro => {
+            res.status(501).render('error', {error: 'Error fetching periodos'})
         })
 });
 
@@ -76,8 +76,8 @@ router.post('/edit/:id', function(req, res, next) {
         })
 });
 
-router.get('/delete/:id', function(req, res, next) {
-    axios.delete("http://localhost:17001/periodos/" + req.params.id)
+router.post('/registo', function(req, res, next) {
+    axios.post("http://localhost:17001/periodos", req.body)
         .then(resp => {
             res.status(200).redirect('/periodos')
         })

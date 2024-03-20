@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <title>TPC5: Compositores e os diversos Periodos - Servidor Web Para Gerenciamento na Framework Express</title>
+        <date>2023-03-20</date>
+        <author>
+            <id>A100759</id>
+            <nome>Pedro Lopes</nome>
+        </author>
+        <uc>
+            <sigla>EW2024</sigla>
+            <nome>Engenharia Web </nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>Neste trabalho, o objetivo principal era o desenvolvimento de um sistema de gerenciamento de compositores e períodos musicais,
+         desenvolvido para facilitar o armazenamento e a visualização de informações relacionadas a esses artistas e seus respectivos 
+         períodos históricos.</p>
+        <p>Isto seria feito através de um servidor em JS e a utilização da Framework Express, criando as principais rotas `/compositores`, `/periodos`, `/compositores/{id}` e `periodos/{id}`.</p>
+        <p>Terceiro Parágrafo com <url>https://github.com/Popes117/EngWeb2024/tree/main/TPC5</url><texto>Repositório</texto></p>
+    </resumo>
+    <resultados>
+        <resultado> Com um servidor funcional, um ficheiro mapa em JSON e as operações CRUD implementadas, é possível obter as páginas pretendidas</resultado>
+    </resultados> 
+</doc>
